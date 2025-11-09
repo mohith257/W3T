@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --void-black: 225 71% 4%;
+    --deep-space: 225 50% 8%;
+    --quantum-primary: 214 100% 50%;
+    --neon-cyan: 188 100% 50%;
+    --ether-purple: 254 70% 69%;
+    --validation-green: 158 100% 50%;
+    --hologram-white: 220 100% 97%;
+    --glass-white: 0 0% 100%;
+    
+    --background: var(--void-black);
+    --foreground: var(--hologram-white);
+
+    --card: 225 50% 10%;
+    --card-foreground: var(--hologram-white);
+
+    --popover: 225 50% 10%;
+    --popover-foreground: var(--hologram-white);
+
+    --primary: var(--quantum-primary);
+    --primary-foreground: var(--hologram-white);
+
+    --secondary: 225 40% 15%;
+    --secondary-foreground: var(--hologram-white);
+
+    --muted: 225 30% 20%;
+    --muted-foreground: 220 20% 65%;
+
+    --accent: var(--neon-cyan);
+    --accent-foreground: var(--void-black);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--hologram-white);
+
+    --border: 225 30% 20%;
+    --input: 225 30% 18%;
+    --ring: var(--quantum-primary);
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--void-black)) 0%, hsl(225 50% 12%) 50%, hsl(225 40% 18%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(var(--quantum-primary)) 0%, hsl(var(--neon-cyan)) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(var(--ether-purple)) 0%, hsl(var(--quantum-primary)) 100%);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/10 hover:border-white/20;
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 102, 255, 0.2);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

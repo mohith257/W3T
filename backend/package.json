@@ -1,0 +1,20 @@
+{
+  "name": "beat-chain-backend",
+  "version": "1.0.0",
+  "description": "Backend helpers for Beat Chain Tickets - simple auth endpoints for MetaMask connection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ethers": "^5.7.2",
+    "express": "^4.18.2",
+    "multer": "^2.0.2",
+    "node-fetch": "^2.7.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.5"
+  }
+}
