@@ -50,10 +50,12 @@ backend/public/nft-images/*
 !backend/public/nft-images/.gitkeep
 backend/data/events.json
 
-# Remix artifacts
+# Remix artifacts & blockchain state
 artifacts/
 cache/
 .deps/
+.states/
+*.json.backup
 
 # Testing
 coverage/
